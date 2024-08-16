@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup and Login Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: aqua;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard {
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        #productForm {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #productCards .card {
+            margin-bottom: 20px;
+        }
+
+        #imagePreview {
+            max-width: 100px;
+            margin-top: 10px;
+            display: none;
+        }
+        #addProductBtn{
+            margin-left: 30pc;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div class="container">
+        <!-- Signup Form -->
+        <div class="form-container" id="signupFormContainer">
+            <h2>Signup</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Signup</button>
+            </form>
+            <button id="showLogin" class="btn btn-secondary mt-3">Account Login</button>
+        </div>
+
+        <!-- Login Form -->
+        <div class="form-container" id="signinFormContainer" style="display: none;">
+            <h2>Login</h2>
+            <form id="signinForm">
+                <div class="form-group">
+                    <label for="signin-email">Email:</label>
+                    <input type="email" id="signin-email" name="signin-email" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="signin-password">Password:</label>
+                    <input type="password" id="signin-password" name="signin-password" required class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <button id="showSignup" class="btn btn-secondary mt-3">Back to Signup</button>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="dashboard" id="dashboard" style="display: none;">
+            <h1 class="text-center mt-4 mb-4">Welcome to Dashboard</h1>
+            <!-- Add Product Button -->
+            <button id="addProductBtn" class="btn btn-primary mb-4">Add Product</button>
+
+            <!-- Add Product Form -->
+            <form id="productForm" style="display: none;">
+                <div class="form-group">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price:</label>
+                    <input type="number" id="productPrice" name="productPrice" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="productImage">Image URL:</label>
+                    <input type="url" id="productImage" name="productImage" required class="form-control">
+                    <img id="imagePreview" src="" alt="Image Preview">
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Description:</label>
+                    <textarea id="productDescription" name="productDescription" required class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Save Product</button>
+            </form>
+
+            <!-- Product Cards -->
+            <div id="productCards" class="row"></div>
+        </div>
+    </div>
+
+    <script src="app.js" type="module"></script>
+</body>
+
+</html>
